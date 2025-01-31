@@ -1,0 +1,739 @@
+/* Reset e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #333;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 .gab {
+  color: #3498db;
+  background: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  margin-right: 0.8rem;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.navbar h1 .quiz {
+  color: #3498db;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Content */
+.home-content {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.home-content h2 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: #3498db;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Botões */
+.btn-primary, .btn-secondary {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  border: 3px solid #3498db;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #3498db;
+  border: 3px solid #3498db;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* Quiz Container */
+.quiz-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #3498db;
+}
+
+.options {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.option-button {
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  border: 2px solid #3498db;
+  border-radius: 12px;
+  background: white;
+  color: #3498db;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover:not(:disabled) {
+  background: #3498db;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Timer */
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Sala de espera */
+.waiting-room {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.participants-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.participant-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.participant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+/* Ranking */
+.ranking {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ranking h2 {
+  color: #3498db;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ranking-list {
+  margin: 2rem 0;
+}
+
+.ranking-item {
+  background: #f8f9fa;
+  margin: 1rem 0;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 2px solid #3498db;
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ranking-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.position {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3498db;
+  text-align: center;
+  background: white;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+}
+
+.username {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.score {
+  background-color: #3498db;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+}
+
+/* Botões do ranking final */
+.ranking .button-group {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e1e8ed;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.ranking .button-group .btn-primary,
+.ranking .button-group .btn-secondary {
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Medalhas para os três primeiros lugares */
+.ranking-item:nth-child(1) .position {
+  background: linear-gradient(45deg, #ffd700, #ffc800);
+  color: white;
+  font-size: 2.2rem;
+}
+
+.ranking-item:nth-child(2) .position {
+  background: linear-gradient(45deg, #c0c0c0, #b0b0b0);
+  color: white;
+  font-size: 2rem;
+}
+
+.ranking-item:nth-child(3) .position {
+  background: linear-gradient(45deg, #cd7f32, #bd6f22);
+  color: white;
+  font-size: 1.8rem;
+}
+
+/* Responsividade do ranking */
+@media (max-width: 768px) {
+  .ranking {
+    padding: 1.5rem;
+  }
+
+  .ranking-item {
+    grid-template-columns: 60px 1fr 100px;
+    padding: 1rem;
+  }
+
+  .position {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .username {
+    font-size: 1.1rem;
+  }
+
+  .score {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .ranking .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ranking .button-group .btn-primary,
+  .ranking .button-group .btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Feedback de resposta */
+.answer-feedback {
+  font-size: 1.8rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animações */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.navbar h1 {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar h1 {
+    font-size: 2.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+/* Estilos para o formulário de criação de quiz */
+.create-quiz {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.create-quiz form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.create-quiz .form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.create-quiz label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #3498db;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.create-quiz input[type="text"],
+.create-quiz textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+.create-quiz input[type="text"]:focus,
+.create-quiz textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: white;
+}
+
+.create-quiz textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Estilo para as questões */
+.question-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #e1e8ed;
+  transition: all 0.3s ease;
+}
+
+.question-container:hover {
+  border-color: #3498db;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+}
+
+.question-container h3 {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.question-container h3::before {
+  content: '📝';
+  font-size: 1.8rem;
+}
+
+/* Estilo para as opções */
+.option-container {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.option-container:hover {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.option-container input[type="text"] {
+  background: white;
+}
+
+/* Estilo para o radio button */
+.radio-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3498db;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #3498db;
+}
+
+/* Botões do formulário */
+.create-quiz .button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.create-quiz .btn-primary,
+.create-quiz .btn-secondary {
+  min-width: 200px;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+/* Animação de entrada para novas questões */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-container {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Placeholders estilizados */
+.create-quiz input::placeholder,
+.create-quiz textarea::placeholder {
+  color: #95a5a6;
+  opacity: 0.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .create-quiz {
+    padding: 1.5rem;
+  }
+
+  .option-container {
+    grid-template-columns: 1fr;
+  }
+
+  .create-quiz .button-group {
+    flex-direction: column;
+  }
+
+  .create-quiz .btn-primary,
+  .create-quiz .btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Feedback visual para campos obrigatórios */
+.create-quiz .required::after {
+  content: '*';
+  color: #e74c3c;
+  margin-left: 4px;
+}
+
+/* Estilo para o contador de questões */
+.questions-counter {
+  text-align: center;
+  color: #7f8c8d;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+/* Estilo para a mensagem de sucesso */
+.success-message {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.success-message h2 {
+  color: #3498db;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.success-message .room-code {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  border: 2px dashed #3498db;
+}
+
+.success-message .room-code h3 {
+  font-size: 3rem;
+  color: #3498db;
+  margin: 1rem 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.success-message .room-code p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.success-message .button-group {
+  margin-top: 2rem;
+}
+
+.success-message .button-group .btn-primary {
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .success-message {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .success-message h2 {
+    font-size: 1.8rem;
+  }
+  
+  .success-message .room-code h3 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mensagens de loading e erro */
+.loading-message,
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.loading-message h2 {
+  color: #3498db;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-message h2 {
+  color: #e74c3c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.error-message .btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Estilos para os formulários de autenticação */
+.auth-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  color: #3498db;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.auth-form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #7f8c8d;
+}
+
+.auth-link a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+} 
