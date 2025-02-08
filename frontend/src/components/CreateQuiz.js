@@ -45,10 +45,10 @@ function CreateQuiz() {
 
   return (
     <div className="container">
-      <div className="navbar">
         <button onClick={() => navigate(-1)} className="btn-back">
           ← Voltar
         </button>
+      <div className="navbar">
         <h1>Criar Novo Quiz</h1>
       </div>
       

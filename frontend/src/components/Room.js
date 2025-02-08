@@ -215,10 +215,10 @@ function Room() {
 
   return (
     <div className="container">
+      <button onClick={handleGoBack} className="btn-back">
+        ← Voltar
+      </button>
       <div className="navbar">
-        <button onClick={handleGoBack} className="btn-back">
-          ← Voltar
-        </button>
         <h1>Quiz Room: {roomCode}</h1>
       </div>
 
