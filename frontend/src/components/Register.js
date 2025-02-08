@@ -21,7 +21,7 @@ function Register() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post(process.env.BACKEND_BASEURL + '/api/auth/register', {
         username: formData.username,
         password: formData.password
       });
