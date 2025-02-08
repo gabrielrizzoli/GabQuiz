@@ -14,7 +14,7 @@ function JoinRoom() {
     try {
       console.log('Tentando entrar na sala:', roomCode);
       const response = await axios.get(`http://localhost:5000/api/rooms/${roomCode}`);
-      
+
       if (response.data) {
         console.log('Sala encontrada:', response.data);
         navigate(`/room/${roomCode}`);
