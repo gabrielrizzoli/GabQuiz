@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io(process.env.BACKEND_BASEURL, {
+const socket = io('http://localhost:5000', {
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
 });
@@ -27,7 +27,7 @@ function Room() {
     const fetchRoom = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(process.env.BACKEND_BASEURL + `/api/rooms/${roomCode}`);
+        const response = await axios.get(`http://localhost:5000/api/rooms/${roomCode}`);
         console.log('Dados da sala recebidos:', response.data);
         
         if (response.data && response.data.quiz) {
@@ -151,7 +151,7 @@ function Room() {
 
   const handleStartGame = async () => {
     try {
-      await axios.post(process.env.BACKEND_BASEURL + `/api/rooms/${roomCode}/start`);
+      await axios.post(`http://localhost:5000/api/rooms/${roomCode}/start`);
     } catch (error) {
       console.error('Erro ao iniciar o jogo:', error);
     }
